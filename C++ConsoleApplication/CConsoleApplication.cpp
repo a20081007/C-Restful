@@ -11,7 +11,9 @@ int main()
 	std::string password = "advantech";
 
 	CTOSClient client = CTOSClient(url, userName, password);
-	client.FinishTesting(sn);
+
+	// if message != OK, there is something error
+	std::wstring message = client.FinishTesting(sn);
 	return 0;
 }
 
